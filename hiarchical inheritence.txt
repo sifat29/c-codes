@@ -1,0 +1,88 @@
+#include <iostream>
+
+using namespace std;
+class courses
+{
+public:
+    int course_code,course_credit,course_fee_per_credit=5000;
+    string course_name;
+};
+class student:public courses
+{
+ public:
+     int student_id,total_payment;
+     string student_name;
+     void registration()
+     {
+         cout<<"enter the student name"<<endl;
+         cin>> student_name;
+        cout<<"enter the student id"<<endl;
+        cin>> student_id;
+         cout<<"enter the course name"<<endl;
+         cin>> course_name;
+        cout<<"enter the course code"<<endl;
+        cin>> course_code;
+         cout<<"enter the course credit"<<endl;
+          cin>> course_credit;
+
+
+     }
+     void info()
+
+     {
+         total_payment=course_credit*course_fee_per_credit;
+
+          cout<<"student name"<<student_name<<endl;
+          cout<<" student id"<< student_id<<endl;
+        cout<<" course name"<<course_name<<endl;
+          cout<<"course fee per credit"<<course_fee_per_credit <<endl;
+           cout<<" course credit"<<course_credit<<endl;
+           cout<<" total payment"<< total_payment<<endl;
+
+     }
+
+};
+class faculty : public courses
+{
+    public:
+     int faculty_id;
+     string faculty_name;
+     void registration()
+     {
+         cout<<"\nenter the faculty name"<<endl;
+         cin>> faculty_name;
+        cout<<"enter the student id"<<endl;
+        cin>> faculty_id;
+         cout<<"enter the course name"<<endl;
+         cin>> course_name;
+        cout<<"enter the course code"<<endl;
+        cin>> course_code;
+         cout<<"enter the course credit"<<endl;
+          cin>> course_credit;
+
+
+     }
+     void info()
+
+     {
+
+          cout<<"faculty name"<<faculty_name<<endl;
+          cout<<" faculty id"<<faculty_id<<endl;
+        cout<<" course name"<<course_name<<endl;
+          cout<<"course fee per credit"<<course_fee_per_credit <<endl;
+           cout<<" course credit"<<course_credit<<endl;
+     }
+
+};
+
+int main()
+{
+    courses obj;
+    student obj1;
+    faculty obj2;
+    obj1.registration();
+    obj1.info();
+    obj2.registration();
+    obj2.info();
+    return 0;
+}

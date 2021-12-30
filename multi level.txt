@@ -1,0 +1,74 @@
+#include <iostream>
+
+using namespace std;
+class A
+{
+protected:
+    int id,age;
+    string name;
+    void input()
+    {
+    cout<<"name"<<endl;
+    cin>>name;
+       cout<<"age"<<endl;
+    cin>>age;
+       cout<<"id"<<endl;
+       cin>>id;
+
+    }
+    void display()
+    {
+        cout<<name<<age<<id<<endl;
+    }
+};
+
+class B : public  A
+{
+public:
+    string designation;
+    void input ()
+    {
+
+        cout<<"Enter the designation"<<endl;
+        cin >> designation;
+    }
+    void display()
+    {
+    A::display();
+
+    cout<<designation<<endl;
+    }
+
+
+
+};
+class C : public  B
+{
+public:
+    int salary;
+    void input ()
+    {
+        cout<< " from c"<<endl;
+        B::input();
+       cout<<"enter the salary"<<endl;
+        cin >> salary;
+    }
+    void display()
+    {
+    B::display();
+    cout<<salary;
+    }
+
+
+    };
+
+int main()
+{
+    B obj;
+    C obj1;
+    //obj.input();
+    //obj.display();
+    obj1.input();
+    obj1.display();
+    return 0;
+}
